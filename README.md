@@ -11,3 +11,7 @@ In order to use it, you must:
   1. Run `make`.
 
 The `trog.lst` file, using annotations I've placed in the `trog.ini` file, then includes mnemonic variable and function/location names and some comments, that aid in reading ,and especially searching for things in, the disassembled code. It is not my intention to completely map out, annotate, or name things in this code; I'm just trying to find my way around well enough to find the right spots to modify in order to effect the desired changes.
+
+Note that the produced disassembly file is *not* suitable for re-assembling into a functioning ROM - it is for human reading purposes only. Various of the inline annotations interfere with reassembly, and in any case, I'm given to understand that the disassembler won't always generate code that would preserve the original bytes when reassembled (the known culprit being the case when a 16-bit memory address is used for a zero-page access, when the operation supports the 8-bit memory access format).
+
+Also there are some non-printable bytes in the first couple lines of `trog.ini`. This is because I keep a couple of vim macros at the top of that file, that I use to ease some operations when working with the listing file. Sorry for that, maybe at some point I'll figure out how to store and load it without representing them in raw form.
