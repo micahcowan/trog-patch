@@ -1,16 +1,26 @@
 # trog-patch
 An exploration of disassembled code from Trog on NES
 
-This project represents my attempt at exploring the 6502 assembly code for the game Trog on the NES, with a view to modifying it so as not to require a 2P start button (so that the US game ROM may be played via Everdrive and the like on Japanese Famicom systems, which lack 2P start and select). A secondary goal is to make player-versus-player combat more "fair", as, unlike with the original arcade game, being one player versus the other does make a significant difference in terms of who is likely to win (I believe P1 is the favored player - I don't know details, just remember a friend and I playing and him consistently beating me in fist fights, then we swapped controllers and I started beating him consistently!)
+This project represents my attempt at exploring the 6502 assembly code for the game Trog on the NES, with a view to modifying it so as not to require a 2P start button (so that the US game ROM may be played via Everdrive and the like on Japanese Famicom systems, which lack 2P start and select) (**NOW COMPLETE!**). A secondary goal is to make player-versus-player combat more "fair", as, unlike with the original arcade game, being one player versus the other does make a significant difference in terms of who is likely to win (player one handily beats player two, regardless of player skill) (this is not yet accomplished).
 
-This repository *does not include* either the NES ROM file for the game, nor the decompiled source listings, as both of these items are protected under copyright law. Instead, it contains just a `trog.ini` file and a simple `Makefile` to use it together with a ROM file, and generate a `trog.lst` file containing an annotated 6502 disassembly of the ROM.
+This repository *does not include* either the NES ROM file for the game, nor the decompiled source listings, as both of these items are protected under copyright law.
 
-In order to use it, you must:
+If a suitable `trog.nes` file is supplied in the working directory, it can
+  * generate disassembled program code for the game, with variable and subroutine names, and comments, taken from the `trog.ini` file, and
+  * patch that file (constructing the patched version at `trog-patched.nes`) so as to allow 2-player enjoyment on a Famicom device or emulation.
+
+In order to use it to generate disassembled code, you must:
   1. Have [Bisqwit](http://bisqwit.iki.fi/)'s [clever-disasm](https://github.com/bisqwit/nescom) installed and on your `PATH`.
   1. Have a copy of the .nes ROM file for the US version of the Trog game in the same directory as the `Makefile`, named `trog.nes`.
   1. Run `make`.
 
-The `trog.lst` file, using annotations I've placed in the `trog.ini` file, then includes mnemonic variable and function/location names and some comments, that aid in reading ,and especially searching for things in, the disassembled code. It is not my intention to completely map out, annotate, or name things in this code; I'm just trying to find my way around well enough to find the right spots to modify in order to effect the desired changes.
+In order to patch your .nes ROM, in addition to the prerequisites above you must also:
+  1. Have [lipx.py](https://github.com/kylon/Lipx) installed on your `PATH`. (The first suitable command-line IPS patcher I could find on GitHub.)
+  1. Run `make patch`.
+
+**Alternatively**, you can use your favorite of any number of other available IPS patchers available on the internet.
+
+The generated `trog.lst` file, using annotations I've placed in the `trog.ini` file, includes mnemonic variable and function/location names and some comments, that aid in reading ,and especially searching for things in, the disassembled code. It is not my intention to completely map out, annotate, or name things in this code; I'm just trying to find my way around well enough to find the right spots to modify in order to effect the desired changes.
 
 Note that the produced disassembly file is *not* suitable for re-assembling into a functioning ROM - it is for human reading purposes only. Various of the inline annotations interfere with reassembly, and in any case, I'm given to understand that the disassembler won't always generate code that would preserve the original bytes when reassembled (the known culprit being the case when a 16-bit memory address is used for a zero-page access, when the operation supports the 8-bit memory access format).
 
