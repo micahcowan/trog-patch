@@ -3,6 +3,8 @@ An exploration of disassembled code from Trog on NES
 
 This project represents my attempt at exploring the 6502 assembly code for the game Trog on the NES, with a view to modifying it so as not to require a 2P start button (so that the US game ROM may be played via Everdrive and the like on Japanese Famicom systems, which lack 2P start and select) (**NOW COMPLETE!**). A secondary goal is to make player-versus-player combat more "fair", as, unlike with the original arcade game, being one player versus the other does make a significant difference in terms of who is likely to win (player one handily beats player two, regardless of player skill) (this is not yet accomplished).
 
+Note: a Game Genie code that does the same thing as the "2P on Famicom" portion of this patch is: **EOOTSAAP**. So if you feel like typing that code into your Everdrive before you run Trog each time, you can use that. May also come in handy if you have a tool for hacking ROMs using Game Genie codes.
+
 This repository *does not include* either the NES ROM file for the game, nor the decompiled source listings, as both of these items are protected under copyright law.
 
 If a suitable `trog.nes` file is supplied in the working directory, it can
