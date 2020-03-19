@@ -4,14 +4,20 @@ all: trog.lst
 
 patch: trog-patched.nes
 
-trog-patched.nes: trog.nes trog-patched.ips
-	lipx.py -ab trog.nes trog-patched.ips $@
+trog-patched.nes: trog-p1.nes trog-fair-pvp.ips
+	lipx.py -ab trog-p1.nes trog-fair-pvp.ips $@
+
+trog-p1.nes: trog.nes trog-famicom2p.ips
+	lipx.py -ab trog.nes trog-famicom2p.ips $@
 
 trog.lst: trog.nes trog.ini
 	clever-disasm trog.nes trog.ini > $@ || { rm $@; exit 1; }
 
-trog-patched.ips: patch.asm
-	nescom -o $@ -I patch.asm
+trog-patched.lst: trog-patched.nes trog.ini
+	clever-disasm trog-patched.nes trog.ini > $@ || { rm $@; exit 1; }
+
+trog-%.ips: %-patch.asm
+	nescom -o $@ -I $<
 # The following lines are because nescom can produce
 # output that makes it seem like it failed rather than
 # succeeded.
