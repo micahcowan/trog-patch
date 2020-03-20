@@ -5,6 +5,7 @@ Current results:
   * Created the following Game Genie code hacks:
     * **ATVPTTXZ** - Removes all enemies (trogs) from the game. Kinda eerie!
     * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button). Also created an IPS patch for this, `trog-famicom2p.ips`. This hack was the original motivation for me to dig into hacking this game!
+
 Future planned hacks:
   * Make player-vs-player violence more fair and balanced (or at least random - on the original cartridge, player 1 beats player 2 in any face-to-face battle). This was the secondary motivation for digging into *Trog!* hacking.
   * Remove all tarpits from the game (except the warps)
