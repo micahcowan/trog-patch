@@ -1,11 +1,29 @@
 # trog-patch
-An exploration of disassembled code from Trog on NES
+An exploration of disassembled code from *Trog!* on the NES
 
-This project represents my attempt at exploring the 6502 assembly code for the game Trog on the NES, with a view to modifying it so as not to require a 2P start button (so that the US game ROM may be played via Everdrive and the like on Japanese Famicom systems, which lack 2P start and select) (**NOW COMPLETE!**). A secondary goal is to make player-versus-player combat more "fair", as, unlike with the original arcade game, being one player versus the other does make a significant difference in terms of who is likely to win (player one handily beats player two, regardless of player skill) (this is not yet accomplished).
+Current results:
+  * Created the following Game Genie code hacks:
+    * **ATVPTTXZ** - Removes all enemies (trogs) from the game. Kinda eerie!
+    * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button). Also created an IPS patch for this, `trog-famicom2p.ips`. This hack was the original motivation for me to dig into hacking this game!
+Future planned hacks:
+  * Make player-vs-player violence more fair and balanced (or at least random - on the original cartridge, player 1 beats player 2 in any face-to-face battle). This was the secondary motivation for digging into *Trog!* hacking.
+  * Remove all tarpits from the game (except the warps)
+  * Prevent falling off edges
+  * Remove all power-ups from the game
+  * Player 2 mirrors player 1 movements and actions
 
-Note: a Game Genie code that does the same thing as the "2P on Famicom" portion of this patch is: **EOOTSAAP**. So if you feel like typing that code into your Everdrive before you run Trog each time, you can use that. May also come in handy if you have a tool for hacking ROMs using Game Genie codes.
+(Most of the planned hacks above are in the service of making testing of player-vs-player punch-outs much easier.)
 
-This repository *does not include* either the NES ROM file for the game, nor the decompiled source listings, as both of these items are protected under copyright law.
+This repository *does not include* either the NES ROM file for the game, nor the decompiled source listings, as both of these items are protected under copyright law. You must provide the ROM yourself, and it must match the following:
+
+```
+Database match: Trog! (USA)
+Database: No-Intro: Nintendo Entertainment System (v. 20180803-121122)
+File SHA-1: DA36075188C98C0434BC78CE0554942948F4228E
+File CRC32: DD6141DF
+ROM SHA-1: 29CA7CC398B855472C9D94E7581BE8288468382B
+ROM CRC32: EE6892EB
+```
 
 If a suitable `trog.nes` file is supplied in the working directory, it can
   * generate disassembled program code for the game, with variable and subroutine names, and comments, taken from the `trog.ini` file, and
