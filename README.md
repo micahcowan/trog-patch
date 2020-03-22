@@ -4,6 +4,7 @@ An exploration of disassembled code from *Trog!* on the NES
 Current results:
   * Created the following Game Genie code hacks:
     * **ATVPTTXZ** - Removes all enemies (trogs) from the game. Kinda eerie!
+    * **AAXOAXPZ** - Prevents players from picking up items (except eggs)
     * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button). Also created an IPS patch for this, `trog-famicom2p.ips`. This hack was the original motivation for me to dig into hacking this game!
 
 Future planned hacks:
