@@ -13,7 +13,10 @@ patched.lst: trog-patched.nes trog.ini
 	clever-disasm $^ | sed -e 's#/\*.*##' > $@
 
 #trog-patched.nes: trog-p1.nes trog-fair-pvp.ips
-trog-patched.nes: trog-p1.nes trog-nerfed.ips
+trog-patched.nes: trog-nerfed.nes trog-mirrored-2p.ips
+	lipx.py -ab $^ $@
+
+trog-nerfed.nes: trog-p1.nes trog-nerfed.ips
 	lipx.py -ab $^ $@
 
 trog-p1.nes: trog.nes trog-famicom2p.ips
