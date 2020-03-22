@@ -4,6 +4,14 @@ all: trog.lst
 
 patch: trog-patched.nes
 
+vimdiff: naked.lst patched.lst
+
+naked.lst: trog.nes trog.ini
+	clever-disasm $^ | sed -e 's#/\*.*##' > $@
+
+patched.lst: trog-patched.nes trog.ini
+	clever-disasm $^ | sed -e 's#/\*.*##' > $@
+
 #trog-patched.nes: trog-p1.nes trog-fair-pvp.ips
 trog-patched.nes: trog-p1.nes trog-nerfed.ips
 	lipx.py -ab $^ $@
