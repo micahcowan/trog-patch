@@ -8,6 +8,7 @@ Current results:
     * **GAOOGXTE** - Prevents players from picking up *eggs*
     * **PXOKUSPE** - Prevents powerups and tarpits - and *exits*! - from spawning
     * **EYSAUTEI** - Players only fall if they *are* invincible
+    * **AEKEZAGP** - Players don't spawn with invincibility
     * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button). Also created an IPS patch for this, `trog-famicom2p.ips`. This hack was the original motivation for me to dig into hacking this game!
 
 Future planned hacks:
