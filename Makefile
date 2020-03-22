@@ -4,8 +4,9 @@ all: trog.lst
 
 patch: trog-patched.nes
 
-trog-patched.nes: trog-p1.nes trog-fair-pvp.ips
-	lipx.py -ab trog-p1.nes trog-fair-pvp.ips $@
+#trog-patched.nes: trog-p1.nes trog-fair-pvp.ips
+trog-patched.nes: trog-p1.nes trog-nerfed.ips
+	lipx.py -ab $^ $@
 
 trog-p1.nes: trog.nes trog-famicom2p.ips
 	lipx.py -ab trog.nes trog-famicom2p.ips $@
