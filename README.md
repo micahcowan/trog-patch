@@ -3,12 +3,14 @@ An exploration of disassembled code from *Trog!* on the NES
 
 Current results:
   * Created the following Game Genie code hacks:
+    * **ZEUAIAPA** - Infinite t-rex (1 of 2)
+    * **SUXPZKVS** - Infinite t-rex (1 of 2)
     * **ATVPTTXZ** - Removes all enemies (trogs) from the game. Kinda eerie!
+    * **EYSAUTEI** - Players only fall if they *are* invincible
+    * **AEKEZAGP** - Players don't spawn with invincibility
     * **AAXOAXPZ** - Prevents players from picking up powerup items
     * **GAOOGXTE** - Prevents players from picking up *eggs*
     * **PXOKUSPE** - Prevents powerups and tarpits - and *exits*! - from spawning
-    * **EYSAUTEI** - Players only fall if they *are* invincible
-    * **AEKEZAGP** - Players don't spawn with invincibility
     * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button). Also created an IPS patch for this, `trog-famicom2p.ips`. This hack was the original motivation for me to dig into hacking this game!
 
 Future planned hacks:
