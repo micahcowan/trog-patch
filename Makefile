@@ -18,8 +18,8 @@ zip: $(ZIPFILE)
 
 # normal clean leaves trog.lst
 clean:
-	rm -f *.nes *.ips *.zip
-	rm -fr $(ZIPDIRNAME)
+	rm -f $(ROMS) *.ips *.zip naked.lst patched.lst
+	rm -fr $(ZIPDIR)
 
 reallyclean: clean
 	rm trog.lst
@@ -91,9 +91,9 @@ trog-%.ips: %-patch.asm
 # succeeded. But also, nescom will happily finish running and exit with
 # status zero even if errors were encountered, so... *sigh*
 	@echo
-	@echo IPS patch successfully created (hopefully!)
+	@echo "IPS patch successfully created (hopefully!)"
 
 trog.nes:
 	@echo "*** Cannot patch roms without original trog.nes file"
-	@echo "(But you can still generate IPS patches with \"make patch\")"
+	@echo "    (But you can still generate IPS patches with \"make patch\")"
 	@exit 1
