@@ -38,7 +38,7 @@ If a suitable `trog.nes` file is supplied in the working directory, it can
   * patch that file (constructing the patched version at `trog-patched.nes`) so as to allow 2-player enjoyment on a Famicom device or emulation.
 
 In order to use it to generate disassembled code, you must:
-  1. Have [Bisqwit](http://bisqwit.iki.fi/)'s [clever-disasm](https://github.com/bisqwit/nescom) installed and on your `PATH`.
+  1. Have [Bisqwit](http://bisqwit.iki.fi/)'s [nescom / clever-disasm](https://github.com/bisqwit/nescom) installed and on your `PATH`.
   1. Have a copy of the .nes ROM file for the US version of the Trog game in the same directory as the `Makefile`, named `trog.nes`.
   1. Run `make`.
 
@@ -47,6 +47,8 @@ In order to patch your .nes ROM, in addition to the prerequisites above you must
   1. Run `make patch`.
 
 **Alternatively**, you can use your favorite of any number of other available IPS patchers available on the internet.
+
+**Note**, at the time of this writing, the IPS patch files actually can't be generated from the `.asm` listings using Bisqwit's unmodified version of **nescom**. The reason is that **nescom** insists on including some bits in the patch that don't belong in a patch against NES roms, and have the effect of corrupting the results. I used a modification of the original tools in order to generate my IPS files; I will update this README when I have published these modifications (and likely some others) and can provide a link.
 
 The generated `trog.lst` file, using annotations I've placed in the `trog.ini` file, includes mnemonic variable and function/location names and some comments, that aid in reading ,and especially searching for things in, the disassembled code. It is not my intention to completely map out, annotate, or name things in this code; I'm just trying to find my way around well enough to find the right spots to modify in order to effect the desired changes.
 
