@@ -3,8 +3,8 @@ An exploration of disassembled code from *Trog!* on the NES
 
 Current results:
   * Created the following Game Genie code hacks:
-    * **ZEUAIAPA** - Infinite t-rex (1 of 2)
-    * **SUXPZKVS** - Infinite t-rex (1 of 2)
+    * **ZEUAIAPA** - Infinite t-rex (1 of 2 - starts players as t-rex)
+    * **SUXPZKVS** - Infinite t-rex (2 of 2 - disables t-rex timeout)
     * **ATVPTTXZ** - Removes all enemies (trogs) from the game. Kinda eerie!
     * **EYSAUTEI** - Players only fall if they *are* invincible
     * **AEKEZAGP** - Players don't spawn with invincibility
