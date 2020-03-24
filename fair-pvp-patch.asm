@@ -6,26 +6,24 @@
 #define playerOneFlags  $2C
 #define playerTwoFlags  $2D
 #define MEM(x) x - $10
+#define mobOneLogicState $035A
 
 ; Here we replace a jump-start into player-handling (why is this there?)
-; with a jump into our alternated player-handler address stored in mem.
+; with a jump into our alternate player-handler address.
 *= $18010   ; orig is $18000
-        jmp ($0100)
+        jmp MEM(MjcHandleThePlayers)
 
 ; This is near start of the Reset (starting) function.
 ; We're replacing some initialization code with a jump to another function where
 ; we do the bit of initialization we replaced, then also initialize our
-; jump var for the player handlers below.
-*= $1C083   ; orig is $1C073
+; own new variables
+*= $1C2AB   ; orig is $1C29B: sta $06AD
         jsr MEM(ReplacedInit)
 
-; Here we create two alternate versions of player handling - one that
-; handles p1 first, then p2, and another that reverse. Both then toggle
-; which gets called next.
-;
-; The idea is that, if one player is getting precedence over another for
-; punches, then which player that is will at least alternate by frame.
-        ;; Reverse player handling vs $18012
+; Here we create an alternate version of the player handling, that
+; does additional processing after both players, delaying the punch
+; check until both are processed.
+
         ;; Original:
         ;;
         ; bit playerOneFlags
@@ -38,8 +36,9 @@
         ; jmp DoPlayer
         ;+rts 
 
+;; call out to after-the-fact punch
 *= $1E710
-MJCHandleThePlayersOne
+MjcHandleThePlayers
         bit playerOneFlags
         bpl +
         ldx #$00
@@ -48,36 +47,35 @@ MJCHandleThePlayersOne
         bpl +
         ldx #$01
         jsr DoPlayer
-+       lda #<MEM(MJCHandleThePlayersTwo)
-        ldx #>MEM(MJCHandleThePlayersTwo)
-        sta $0100
-        stx $0101
-        rts 
++       jmp MEM(PostponedPunchProcessing)
 
 *= $1E915
-MJCHandleThePlayersTwo
-        bit playerTwoFlags
-        bpl +
+;; Process after-the-fact punching
+PostponedPunchProcessing
         ldx #$01
-        jsr DoPlayer
-+       bit playerOneFlags
-        bpl +
-        ldx #$00
-        jsr DoPlayer
-+       lda #<MEM(MJCHandleThePlayersOne)
-        ldx #>MEM(MJCHandleThePlayersOne)
-        sta $0100
-        stx $0101
-        rts 
-
-ReplacedInit
-        sta $8007   ; We replaced this op in order to jump here, so we
-                    ; still have to do it
-        lda #<MEM(MJCHandleThePlayersOne)
-        ldx #>MEM(MJCHandleThePlayersOne)
-        sta $0100
-        stx $0101
+-       lda $0100,x
+        beq +
+        sta mobOneLogicState,x
+        lda #$00
+        sta $0100,x
++       dex
+        bpl -
         rts
+
+;; Init after-the-fact punching
+ReplacedInit
+        sta $06AD   ; We replaced this op in order to jump here, so we
+                    ; still have to do it
+        lda #$00
+        sta $0100
+        sta $0101
+        rts
+
+;; replace immediate punching
+* = $1901B
+	;; prev: lda #$05
+        sta $0100,x     ; Steals from stack, but s/b okay
+	;; orig, same # bytes: jsr SetMobLogicStateToAccum
 
 * = $18F59
         ;; orig: cpx currentPlayerInfo
