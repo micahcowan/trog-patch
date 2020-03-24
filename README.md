@@ -11,16 +11,16 @@ Current results:
     * **AAXOAXPZ** - Prevents players from picking up powerup items
     * **GAOOGXTE** - Prevents players from picking up *eggs*
     * **PXOKUSPE** - Prevents powerups and tarpits - and *exits*! - from spawning
-    * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button). Also created an IPS patch for this, `trog-famicom2p.ips`. This hack was the original motivation for me to dig into hacking this game!
+    * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button).
+  * **Famicom 2-player patch**: An IPS patch version of the Famicom 2p game genie code mentioned above. This hack was the original motivation for me to dig into hacking this game!
+  * **Fair PvP patch**: Made player-vs-player violence more fair and balanced (on the original cartridge (but not the original arcade game), player 1 beats player 2 easily in any face-to-face battle). This was the secondary motivation for digging into *Trog!* hacking.
+  * A patch that removes all spawned map items (tarpits, eggs, speed weeds, slow shrooms, horseshoes and pineapples), and prevents falling off the edges (this patch was created for easier testing of the Fair PvP Patch).
+  * A patch that mirrors player one's controls to player two (created to test the Fair PvP Patch project with just one controller)
 
 Future planned hacks:
-  * Make player-vs-player violence more fair and balanced (or at least random - on the original cartridge, player 1 beats player 2 in any face-to-face battle). This was the secondary motivation for digging into *Trog!* hacking.
-  * Remove all tarpits from the game (except the warps)
-  * Prevent falling off edges
-  * Remove all power-ups from the game
-  * Player 2 mirrors player 1 movements and actions
-
-(Most of the planned hacks above are in the service of making testing of player-vs-player punch-outs much easier.)
+  * Permanent fireballs
+  * Trogs at their final speed, throughout the game? And maximum # of trogs
+  * First egg triggers warp
 
 This repository *does not include* either the NES ROM file for the game, nor the decompiled source listings, as both of these items are protected under copyright law. You must provide the ROM yourself, and it must match the following:
 
