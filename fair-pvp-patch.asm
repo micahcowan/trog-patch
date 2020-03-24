@@ -78,3 +78,8 @@ ReplacedInit
         sta $0100
         stx $0101
         rts
+
+* = $18F59
+        ;; orig: cpx currentPlayerInfo
+        nop
+        nop

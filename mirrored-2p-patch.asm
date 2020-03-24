@@ -74,3 +74,29 @@ buttonScratch = $10
 	pla
 	rts
 
+;;; Stuff below this line is to prevent P2 getting permanently stuck
+;;; punching, in the event that P1's buttons aren't processed.
+
+
+* = $1C93A
+MyNewClearButtons
+	                    ;lda playerOneButtons,x   ; Stoopid nescom doesn't make this zero-page
+                            lda $2E,x
+	                    and #$3F
+	                    ;sta playerOneButtons,x
+                            sta $2E,x
+
+                            lda $035A
+                            cmp #$01
+                            beq +
+
+	                    ;lda playerOneButtons
+                            lda $2E
+	                    and #$3F
+	                    ;sta playerOneButtons
+	                    sta $2E
++	                    rts
+
+* = $1962B
+ClearPlayerABButtons
+                            jmp $C92A  ;; MyNewClearButtons
