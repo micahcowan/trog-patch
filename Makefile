@@ -46,7 +46,8 @@ $(ZIPFILE): $(ZIPDIR)/README.txt $(patsubst %,$(ZIPDIR)/%,$(PATCHES))
 	zip -r $@ $(ZIPDIR)
 
 $(ZIPDIR)/README.txt: ZIP-INCLUDE-README.txt $(ZIPDIR)
-	cp $< $@
+#	cp $< $@
+	sed 's/$$/'$$'\r/' < $< > $@	# Windows CRLF line endings
 
 $(ZIPDIR)/%.ips: %.ips $(ZIPDIR)
 	cp $< $@
