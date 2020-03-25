@@ -5,13 +5,22 @@ Current results:
   * Created the following Game Genie code hacks:
     * **ZEUAIAPA** - Infinite t-rex (1 of 2 - starts players as t-rex)
     * **SUXPZKVS** - Infinite t-rex (2 of 2 - disables t-rex timeout)
+    * **SUSPZKVS** - Infinite invincibility
+    * **VNVELESO** - Infinite fireballs (1 of 2 - enable fireball at start)
+    * **SUSOZKVS** - Infinite fireballs (2 of 2 - disable fireball timeout)
     * **ATVPTTXZ** - Removes all enemies (trogs) from the game. Kinda eerie!
+    * **TEOLPPLA** - Players at maximum speed
     * **EYSAUTEI** - Players only fall if they *are* invincible
     * **AEKEZAGP** - Players don't spawn with invincibility
     * **AAXOAXPZ** - Prevents players from picking up powerup items
     * **GAOOGXTE** - Prevents players from picking up *eggs*
     * **PXOKUSPE** - Prevents powerups and tarpits - and *exits*! - from spawning
     * **EOOTSAAP** - Enables player 2 to join/continue with the A button (useful via Everdrive on the Famicom, which lacks the start button).
+    * **OXULGOOU** - Hard mode / fast trogs (1 of 3)
+    * **XVULTPOU** - Hard mode / fast trogs (2 of 3)
+    * **LOULIOXI** - Hard mode / fast trogs (3 of 3)
+    * **IOULIOXI** - Hard mode / fast trogs (3 of 3) ALT: even faster
+    * **AOULIOXS** - Hard mode / fast trogs (3 of 3) ALT: insanely fast
   * **Famicom 2-player patch**: An IPS patch version of the Famicom 2p game genie code mentioned above. This hack was the original motivation for me to dig into hacking this game!
   * **Fair PvP patch**: Made player-vs-player violence more fair and balanced (on the original cartridge (but not the original arcade game), player 1 beats player 2 easily in any face-to-face battle). This was the secondary motivation for digging into *Trog!* hacking.
   * A patch that removes all spawned map items (tarpits, eggs, speed weeds, slow shrooms, horseshoes and pineapples), and prevents falling off the edges (this patch was created for easier testing of the Fair PvP Patch).
