@@ -24,13 +24,19 @@ ROM patches included:
              the fair-pvp patch. This patch was designed to facilitate
              testing, and not to enhance gameplay.
 
+.
+
 
 During the course of developing these patches, the following Game Genie
 cheat codes were also discovered:
 
-    ZEUAIAPA - Infinite t-rex (1 of 2)
-    SUXPZKVS - Infinite t-rex (2 of 2)
+    ZEUAIAPA - Infinite t-rex (1 of 2 - starts players as t-rex)
+    SUXPZKVS - Infinite t-rex (2 of 2 - disables t-rex timeout)
+    SUSPZKVS - Infinite invincibility
+    VNVELESO - Infinite fireballs (1 of 2 - enable fireball at start)
+    SUSOZKVS - Infinite fireballs (2 of 2 - disable fireball timeout)
     ATVPTTXZ - Removes all enemies (trogs) from the game. Kinda eerie!
+    TEOLPPLA - Players at maximum speed
     EYSAUTEI - Players only fall if they are invincible
     AEKEZAGP - Players don't spawn with invincibility
     AAXOAXPZ - Prevents players from picking up powerup items
@@ -38,6 +44,11 @@ cheat codes were also discovered:
     PXOKUSPE - Prevents powerups and tarpits - and exits! - from spawning
     EOOTSAAP - Enables player 2 to join/continue with the A button
                (game genie equivalent to famicom2p patch)
+    OXULGOOU - Hard mode / fast trogs (1 of 3)
+    XVULTPOU - Hard mode / fast trogs (2 of 3)
+    LOULIOXI - Hard mode / fast trogs (3 of 3)
+    IOULIOXI - Hard mode / fast trogs (3 of 3) ALT: even faster
+    AOULIOXS - Hard mode / fast trogs (3 of 3) ALT: insanely fast
 
 
 ---=== TO USE THESE PATCHES ===---
