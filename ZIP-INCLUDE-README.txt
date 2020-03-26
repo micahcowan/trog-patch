@@ -7,6 +7,10 @@ Email: micah@addictivecode.org
 
 
 ROM patches included:
+  blaze-it:  A "hard mode" patch with extra-speedy trogs.
+             Players also start at their maximum speed, no speed flowers
+             needed.
+
   famicom2p: A patch that lets the 2nd player use the A button for
              joining (permitting use via Everdrive on a Famicom)
 
@@ -44,11 +48,6 @@ cheat codes were also discovered:
     PXOKUSPE - Prevents powerups and tarpits - and exits! - from spawning
     EOOTSAAP - Enables player 2 to join/continue with the A button
                (game genie equivalent to famicom2p patch)
-    OXULGOOU - Hard mode / fast trogs (1 of 3)
-    XVULTPOU - Hard mode / fast trogs (2 of 3)
-    LOULIOXI - Hard mode / fast trogs (3 of 3)
-    IOULIOXI - Hard mode / fast trogs (3 of 3) ALT: even faster
-    AOULIOXS - Hard mode / fast trogs (3 of 3) ALT: insanely fast
 
 
 ---=== TO USE THESE PATCHES ===---
