@@ -1,0 +1,25 @@
+Provided by nattou (Micah Cowan)
+  micah@addictivecode.org
+
+This program listing was automatically generated
+using Bisqwit's "clever-disasm" tool from
+https://bisqwit.iki.fi/source/nescom.html
+
+Inputs used were a trog.ini file available at
+https://github.com/micahcowan/trog-patch
+and the Trog! NES rom file (not provided)
+
+While this file presents a (partially) annotated disassembly of the
+Trog! NES program code, it is intended for reading/reference purposes
+only - it cannot be used as input to any particular assembler
+(including, at least at this time, nescom, the assembler that
+clever-disasm ships with). However, it provides sufficient information
+to understand the inner workings and mechanics of the game,
+and to modify and extend it (and indeed, I have used it successfully to
+that end).
+
+Useful labels at which to start reading are: Reset (where code starts
+executing from), GamePlayLoop, HandleThePlayers_, PlayerStateNormalPlay_1
+
+Enjoy!
+

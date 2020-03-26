@@ -80,8 +80,9 @@ trog-mirrored-2p.nes: trog-nerfed.nes trog-mirrored-2p.ips
 
 # Produce a disassembly using clever-disasm, and my
 # hand-crafted annotations
-trog.lst: trog.nes trog.ini
-	clever-disasm trog.nes trog.ini > $@ || { rm $@; exit 1; }
+trog.lst: trog.nes trog.ini trog-preamble.txt
+	sed -e 's/^/;; /' -e 's/$$/\r/' < trog-preamble.txt >| $@ || { rm $@; exit 1; }
+	clever-disasm trog.nes trog.ini | sed -e 's/$$/\r/' >> $@ || { rm $@; exit 1; }
 
 ########
 
