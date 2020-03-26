@@ -1,6 +1,7 @@
 .PHONY: all patch roms vimdiff zip clean reallyclean
 
-PATCHES = trog-famicom2p.ips trog-fair-pvp.ips trog-nerfed.ips trog-mirrored-2p.ips
+PATCH_SOURCES = $(wildcard *-patch.asm)
+PATCHES = $(patsubst %-patch.asm,trog-%.ips,$(PATCH_SOURCES))
 
 ROMS = $(patsubst %.ips,%.nes,$(PATCHES))
 
@@ -65,6 +66,10 @@ trog-famicom2p.nes: trog.nes trog-famicom2p.ips
 # trog-fair-pvp.nes includes both the famicom2p patch, and the fair-pvp
 # patch.
 trog-fair-pvp.nes: trog-famicom2p.nes trog-fair-pvp.ips
+	lipx.py -ab $^ $@
+
+# trog-blaze-it.nes: all from trog-fair-pvp.nes, + blaze-it patch
+trog-blaze-it.nes: trog-fair-pvp.nes trog-blaze-it.ips
 	lipx.py -ab $^ $@
 
 # trog-nerfed.nes includes all from trog-fair-pvp.nes,
