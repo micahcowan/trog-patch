@@ -3,6 +3,8 @@ An exploration of disassembled code from *Trog!* on the NES
 
 To download the ROM patches, [see the releases page](https://github.com/micahcowan/trog-patch/releases). You will need the original NES ROM for Trog! - do a Google search for "trog nes rom" and see what you can find.
 
+There are [some videos](https://www.youtube.com/watch?v=mjR6M9D5cYE&list=PLHHHTIsNQayp5MptWHpqZQGTn-kctPlen) available showcasing some of the hacks and game genie codes from this project.
+
 Current results:
   * Created the following Game Genie code hacks:
     * **ZEUAIAPA** - Infinite t-rex (1 of 2 - starts players as t-rex)
